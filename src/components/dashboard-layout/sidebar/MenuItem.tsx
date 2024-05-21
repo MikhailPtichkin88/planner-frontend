@@ -1,6 +1,5 @@
-import Link from 'next/link'
-
 import { IMenuItem } from './menu.interface'
+import Link from 'next/link'
 
 export function MenuItem({ item }: { item: IMenuItem }) {
 	return (

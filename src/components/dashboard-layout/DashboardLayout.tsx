@@ -1,7 +1,6 @@
-import type { PropsWithChildren } from 'react'
-
 import { Header } from './header/Header'
 import { Sidebar } from './sidebar/Sidebar'
+import type { PropsWithChildren } from 'react'
 
 export default function DashboardLayout({
 	children

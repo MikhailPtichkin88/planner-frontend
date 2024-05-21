@@ -1,13 +1,12 @@
 'use client'
 
+import { LogoutButton } from './LogoutButton'
+import { MenuItem } from './MenuItem'
+import { MENU } from './menu.data'
 import { GanttChartSquare } from 'lucide-react'
 import Link from 'next/link'
 
 import { COLORS } from '@/constants/color.constants'
-
-import { LogoutButton } from './LogoutButton'
-import { MenuItem } from './MenuItem'
-import { MENU } from './menu.data'
 
 export function Sidebar() {
 	return (

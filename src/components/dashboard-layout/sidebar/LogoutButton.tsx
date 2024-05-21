@@ -1,10 +1,9 @@
 'use client'
 
+import { authService } from '@/services/auth.service'
 import { useMutation } from '@tanstack/react-query'
 import { LogOut } from 'lucide-react'
 import { useRouter } from 'next/navigation'
-
-import { authService } from '@/services/auth.service'
 
 export function LogoutButton() {
 	const router = useRouter()

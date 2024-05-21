@@ -1,4 +1,4 @@
-import { Statistics } from './Statistics'
+import { Settings } from './Settings'
 import type { Metadata } from 'next'
 
 import { Heading } from '@/components/ui/Heading/Heading'
@@ -7,14 +7,14 @@ import { NO_INDEX_PAGE } from '@/constants/seo.constants'
 
 export const metadata: Metadata = {
 	...NO_INDEX_PAGE,
-	title: 'Dashboard'
+	title: 'Settings'
 }
 
-export default function DashboardPage() {
+export default function SettingsPage() {
 	return (
 		<div>
-			<Heading title='Statistics' />
-			<Statistics />
+			<Heading title='Settings' />
+			<Settings />
 		</div>
 	)
 }

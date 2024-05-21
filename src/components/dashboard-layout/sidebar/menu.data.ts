@@ -1,3 +1,4 @@
+import type { IMenuItem } from './menu.interface'
 import {
 	CalendarRange,
 	KanbanSquare,
@@ -7,8 +8,6 @@ import {
 } from 'lucide-react'
 
 import { DASHBOARD_PAGES } from '@/config/pages-url.config'
-
-import type { IMenuItem } from './menu.interface'
 
 export const MENU: IMenuItem[] = [
 	{
