@@ -26,6 +26,11 @@ class PomodoroService {
 		const response = await axiosWithAuth.put(`${this.BASE_URL}/${id}`, data)
 		return response
 	}
+	async deleteSession(id: string) {
+		const response = await axiosWithAuth.delete(`${this.BASE_URL}/${id}`)
+		return response
+	}
+
 	async updateRound(id: string, data: TypePomodoroRoundState) {
 		const response = await axiosWithAuth.put(
 			`${this.BASE_URL}/round/${id}`,
