@@ -5,20 +5,20 @@ import { IPomodoroRoundResponse } from "@/types/pomodoro.types"
 
 type TAction = ITimerState & { rounds: IPomodoroRoundResponse[] | undefined }
 
-export function useTimerAction({ secondsLeft, activeRound, rounds, setIsRunning, setActiveRound }: TAction) {
+export function useTimerActions({ secondsLeft, activeRound, rounds, setIsRunning, setActiveRound }: TAction) {
   const { workInterval } = useLoadSettings()
   const { isUpdateRoundPending, updateRound } = useUpdateRound()
 
   const pauseHandler = () => {
-    const totalSeconds = (workInterval * 60) - secondsLeft
+
     setIsRunning(false)
 
     if (activeRound?.id) {
       updateRound({
         id: activeRound?.id,
         data: {
-          totalSeconds,
-          isCompleted: Math.floor(totalSeconds * 60) >= workInterval
+          totalSeconds: secondsLeft,
+          isCompleted: secondsLeft === 0
         }
       })
     }

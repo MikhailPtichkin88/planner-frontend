@@ -12,8 +12,7 @@ interface IPomodoroRounds {
 }
 export const PomodoroRounds = ({ rounds, nextRoundHandler, prevRoundHandler, activeRound }: IPomodoroRounds) => {
   const isCanPrevRound = rounds ? rounds.some(round => round.isCompleted) : false
-  const isCanNextRound = rounds ? rounds[rounds.length - 1].isCompleted : false
-
+  const isCanNextRound = rounds ? !(rounds[rounds.length - 1].isCompleted) : false
 
   return (
     <div className={cls.container}>

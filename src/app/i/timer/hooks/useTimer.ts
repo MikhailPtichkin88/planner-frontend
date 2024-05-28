@@ -3,7 +3,9 @@ import { useLoadSettings } from "./useLoadSettings"
 import type { IPomodoroRoundResponse } from "@/types/pomodoro.types"
 import type { ITimerState } from "../types"
 
-export function useTimer(): ITimerState {
+type TUseTimerResponse = ITimerState & { isRunning: boolean }
+
+export function useTimer(): TUseTimerResponse {
 
   const { breakInterval, workInterval } = useLoadSettings()
 
@@ -32,10 +34,14 @@ export function useTimer(): ITimerState {
 
 
   useEffect(() => {
-    if (secondsLeft > 0) return
 
-    setIsBreakTime(!isBreakTime)
-    setSecondsLeft((isBreakTime ? breakInterval : workInterval) * 60)
+    if (secondsLeft === 0) {
+
+      setIsBreakTime(!isBreakTime)
+      setSecondsLeft((isBreakTime ? breakInterval : workInterval) * 60)
+    }
+
+
   }, [secondsLeft, breakInterval, workInterval, isBreakTime])
-  return { secondsLeft, activeRound, setIsRunning, setSecondsLeft, setActiveRound }
+  return { secondsLeft, activeRound, isRunning, setIsRunning, setSecondsLeft, setActiveRound }
 }
