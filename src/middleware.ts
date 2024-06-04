@@ -18,7 +18,7 @@ export async function middleware(request: NextRequest, response: NextResponse) {
 	}
 
 	if (!refreshToken) {
-		return NextResponse.redirect(new URL('auth', request.url))
+		return NextResponse.redirect(new URL('/auth', request.url))
 	}
 	return NextResponse.next()
 }
