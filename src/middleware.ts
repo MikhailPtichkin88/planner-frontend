@@ -12,9 +12,9 @@ export async function middleware(request: NextRequest, response: NextResponse) {
 		return NextResponse.redirect(new URL(DASHBOARD_PAGES.HOME, url))
 	}
 
-	// if (isAuthPage) {
-	// 	return NextResponse.next()
-	// }
+	if (isAuthPage) {
+		return NextResponse.next()
+	}
 	console.log("REFRESH_TOKEN", refreshToken)
 
 	if (!refreshToken) {
