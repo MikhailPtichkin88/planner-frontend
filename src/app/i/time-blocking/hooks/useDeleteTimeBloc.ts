@@ -1,5 +1,5 @@
 import { timeBlockService } from '@/services/time-block.service';
-import { QueryClient, useMutation, useQueryClient } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 
 export function useDeleteTimeBlock() {
