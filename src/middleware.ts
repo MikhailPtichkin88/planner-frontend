@@ -15,7 +15,6 @@ export async function middleware(request: NextRequest, response: NextResponse) {
 	if (isAuthPage) {
 		return NextResponse.next()
 	}
-	console.log("REFRESH_TOKEN", refreshToken)
 
 	if (!refreshToken) {
 		return NextResponse.redirect(new URL('/auth', request.url))
