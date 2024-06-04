@@ -17,11 +17,11 @@ export async function middleware(request: NextRequest, response: NextResponse) {
 	}
 
 	if (!refreshToken) {
-		return NextResponse.redirect(new URL('/auth', request.url))
+		return NextResponse.redirect(new URL('/planner_app/auth', request.url))
 	}
 	return NextResponse.next()
 }
 
 export const config = {
-	matcher: ['/i/:path*', '/auth/:path']
+	matcher: ['/planner_app/i/:path*', '/planner_app/auth/:path']
 }
