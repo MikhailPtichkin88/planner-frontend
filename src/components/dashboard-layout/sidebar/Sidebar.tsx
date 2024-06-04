@@ -13,7 +13,7 @@ export function Sidebar() {
 		<aside className='border-r border-r-border h-full bg-sidebar flex flex-col justify-between'>
 			<div>
 				<Link
-					href='/'
+					href='/i'
 					className='flex items-center gap-2.5 p-layout border-b border-b-border'
 				>
 					<GanttChartSquare
