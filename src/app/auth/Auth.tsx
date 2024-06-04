@@ -3,7 +3,7 @@
 import { authService } from '@/services/auth.service'
 import { useMutation } from '@tanstack/react-query'
 import { useRouter } from 'next/navigation'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 
@@ -39,6 +39,13 @@ export const Auth = () => {
 	const onSubmit = (data: IAuthForm) => {
 		mutate(data)
 	}
+
+	useEffect(() => {
+		reset({
+			email: 'user@test.ru',
+			password: '123456'
+		})
+	}, [])
 
 	return (
 		<div className='flex min-h-screen'>
