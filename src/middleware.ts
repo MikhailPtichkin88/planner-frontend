@@ -4,7 +4,6 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export async function middleware(request: NextRequest, response: NextResponse) {
 	const { url, cookies } = request
-	console.log("REFRESH_TOKEN", cookies.get(EnumTokens.REFRESH_TOKEN)?.value)
 	const refreshToken = cookies.get(EnumTokens.REFRESH_TOKEN)?.value
 
 	const isAuthPage = url.includes('/auth')
@@ -16,8 +15,10 @@ export async function middleware(request: NextRequest, response: NextResponse) {
 	if (isAuthPage) {
 		return NextResponse.next()
 	}
+	console.log("REFRESH_TOKEN", refreshToken)
 
 	if (!refreshToken) {
+		console.log("redirect")
 		return NextResponse.redirect(new URL('/auth', request.url))
 	}
 	return NextResponse.next()
