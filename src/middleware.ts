@@ -18,7 +18,6 @@ export async function middleware(request: NextRequest, response: NextResponse) {
 	console.log("REFRESH_TOKEN", refreshToken)
 
 	if (!refreshToken) {
-		console.log("redirect")
 		return NextResponse.redirect(new URL('/auth', request.url))
 	}
 	return NextResponse.next()
