@@ -5,10 +5,10 @@ import { Pomodoro } from './Pomodoro'
 
 export const metadata: Metadata = {
   ...NO_INDEX_PAGE,
-  title: 'enterName'
+  title: 'Timer'
 }
 
-export default function enterNamePage() {
+export default function TimerPage() {
   return <div>
     <Heading title='Pomodoro timer' />
     <Pomodoro />
