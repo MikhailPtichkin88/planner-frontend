@@ -22,7 +22,7 @@ export async function middleware(request: NextRequest, response: NextResponse) {
 		return NextResponse.redirect(new URL('/planner_app/auth', url))
 	}
 
-	const isHomePage = request?.nextUrl?.pathname === '/' || request?.nextUrl?.pathname === '/planner_app'
+	const isHomePage = request?.nextUrl?.pathname === '/'
 	if (isHomePage) {
 		if (!refreshToken || !accessToken) {
 			return NextResponse.redirect(new URL('/planner_app/auth', url))
@@ -34,5 +34,5 @@ export async function middleware(request: NextRequest, response: NextResponse) {
 }
 
 export const config = {
-	matcher: ['/', '/i', '/auth', '/planner_app', '/planner_app/i/:path*', '/planner_app/auth/:path']
+	matcher: ['/', '/i', '/auth', '/planner_app/i/:path*', '/planner_app/auth/:path']
 }
