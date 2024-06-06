@@ -34,5 +34,5 @@ export async function middleware(request: NextRequest, response: NextResponse) {
 }
 
 export const config = {
-	matcher: ['/', '/i', '/auth', '/planner_app/i/:path*', '/planner_app/auth/:path']
+	matcher: ['/planner_app', 'planner_app/i', 'planner_app/auth', '/planner_app/i/:path*', '/planner_app/auth/:path']
 }
